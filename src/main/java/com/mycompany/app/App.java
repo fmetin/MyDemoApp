@@ -20,7 +20,7 @@ public class App
       if (array == null) return false;
 
       for (String elt : array) {
-	if (elt.length()<input3Int)
+	if (elt.length()<length)
 		return false;
         if (elt.substring(0,length).equals(input2))
 		count++;

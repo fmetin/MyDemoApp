@@ -49,7 +49,7 @@ public class App
           String input2 = req.queryParams("input2").replaceAll("\\s","");
 
 	  String input3 = req.queryParams("input3").replaceAll("\\s","");
-	  int input3Int = Integer.ParseInt(input3);
+	  int input3Int = Integer.parseInt(input3);
 
           boolean result = App.search(inputList, input2 , input3Int);
 

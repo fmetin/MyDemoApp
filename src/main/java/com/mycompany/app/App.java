@@ -20,10 +20,11 @@ public class App
       if (array == null) return false;
 
       for (String elt : array) {
-        if (elt.substring(0,length).equals(input2))
-		count++;
 	if (elt.length()<input3Int)
 		return false;
+        if (elt.substring(0,length).equals(input2))
+		count++;
+	
       }
       return count==input3Int;
     }

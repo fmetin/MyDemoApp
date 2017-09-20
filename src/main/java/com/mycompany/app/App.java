@@ -12,14 +12,17 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static boolean search(ArrayList<Integer> array, int e) {
+    public static boolean search(ArrayList<String> array, String input2, int input3Int) {
       System.out.println("inside search");
+	int count = 0;
+	int length = input2.length(); 
       if (array == null) return false;
 
-      for (int elt : array) {
-        if (elt == e) return true;
+      for (String elt : array) {
+        if (elt.substring(0,length).equals(input2))
+		count++;
       }
-      return false;
+      return count==input3Int;
     }
 
     public static void main(String[] args) {
@@ -37,14 +40,16 @@ public class App
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            String value = sc1.next().replaceAll("\\s","");
             inputList.add(value);
           }
           System.out.println(inputList);
 
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
-          int input2AsInt = Integer.parseInt(input2);
+
+	  String input3 = req.queryParams("input3").replaceAll("\\s","");
+	  int input3Int = Integer.ParseInt(input3);
 
           boolean result = App.search(inputList, input2AsInt);
 

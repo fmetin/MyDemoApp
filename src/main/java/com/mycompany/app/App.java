@@ -37,7 +37,7 @@ public class App
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
+          java.util.ArrayList<String> inputList = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
             String value = sc1.next().replaceAll("\\s","");
@@ -51,7 +51,7 @@ public class App
 	  String input3 = req.queryParams("input3").replaceAll("\\s","");
 	  int input3Int = Integer.ParseInt(input3);
 
-          boolean result = App.search(inputList, input2AsInt);
+          boolean result = App.search(inputList, input2 , input3Int);
 
          Map map = new HashMap();
           map.put("result", result);
